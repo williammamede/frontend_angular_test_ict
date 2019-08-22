@@ -1,0 +1,40 @@
+<div style="text-align:center">
+  <h1>
+    {{ title }}!
+  </h1>
+  <img alt="ICT LAB" src="https://www.inatel.br/custom/templateinatelazul/images/icon/ico-ictlab-116x166.png">
+  <!-- <img src="http://localhost/satellite.jpg"> -->
+  <br />
+  <br />
+  <div>
+    <button mat-raised-button color="primary" (click)="myClick()">Refresh data</button>
+  </div>
+  <h2 class="example-h2">Result</h2>
+
+  <section class="example-section">
+    <mat-progress-bar mode="indeterminate" *ngIf="spinnerService.visibility | async"></mat-progress-bar>
+  </section>
+  <br />
+</div>
+
+<router-outlet></router-outlet>
+
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> id </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="val1">
+    <th mat-header-cell *matHeaderCellDef> val1 </th>
+    <td mat-cell *matCellDef="let element"> {{element.val1}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="val2">
+    <th mat-header-cell *matHeaderCellDef> val2 </th>
+    <td mat-cell *matCellDef="let element"> {{element.val2}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
