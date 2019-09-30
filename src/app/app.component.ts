@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from './api.service';
 import { Data } from './data';
 import { SpinnerService } from './spinner.service';
@@ -8,14 +8,15 @@ import { SpinnerService } from './spinner.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'val1', 'val2'];
+export class AppComponent implements OnInit {
+  displayedColumns: string[] = ['name', 'humidity', 'bomba', 'Acionamento', 'Rx'];
   data: Data[] = [];
   title = 'ICT Lab Test';
 
   constructor(private apiService: ApiService, private spinnerService: SpinnerService) {
-   }
-  ngAfterViewInit() {
+
+  }
+  ngOnInit() {
     this.updateData();
   }
 

@@ -20,19 +20,25 @@
 <router-outlet></router-outlet>
 
 <table mat-table [dataSource]="data" class="mat-elevation-z8">
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> id </th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
   </ng-container>
-
-  <ng-container matColumnDef="val1">
-    <th mat-header-cell *matHeaderCellDef> val1 </th>
-    <td mat-cell *matCellDef="let element"> {{element.val1}} </td>
+  <ng-container matColumnDef="humidity">
+    <th mat-header-cell *matHeaderCellDef> Humidity </th>
+    <td mat-cell *matCellDef="let element"> {{element.humidity[0]}} </td>
   </ng-container>
-
-  <ng-container matColumnDef="val2">
-    <th mat-header-cell *matHeaderCellDef> val2 </th>
-    <td mat-cell *matCellDef="let element"> {{element.val2}} </td>
+  <ng-container matColumnDef="bomba">
+    <th mat-header-cell *matHeaderCellDef> Bomba </th>
+    <td mat-cell *matCellDef="let element"> {{element.bomba[0]}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Acionamento">
+    <th mat-header-cell *matHeaderCellDef> Acionamento </th>
+    <td mat-cell *matCellDef="let element"> {{element.Acionamento[0]}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Rx">
+    <th mat-header-cell *matHeaderCellDef> Rx </th>
+    <td mat-cell *matCellDef="let element"> {{element.Rx[0]}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -1,5 +1,7 @@
 export class Data {
-    id: number;
-    val1: number;
-    val2: number;
+    name: string;
+    humidity: Array<number>;
+    bomba: Array<string>;
+    Acionamento: Array<string>;
+    rx: Array<string>;
 }
