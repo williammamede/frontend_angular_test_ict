@@ -1,0 +1,28 @@
+version: '3'
+services:
+  phpserver:
+    build:
+      dockerfile: backend.dockerfile
+      context: ./httpd
+    image: willmamede/php_test_ict
+    container_name: phpserver
+    ports:
+      - "80:80"
+    networks: 
+      - "my-network"
+  angularfe:
+    build:
+      dockerfile: ./frontend.dockerfile
+      context: .
+    image: willmamede/angular_test_ict
+    container_name: angularfe
+    ports: 
+      - "4200:4200"
+    networks:
+      - "my-network"
+    depends_on:
+      - "phpserver"
+
+networks: 
+  my-network:
+    driver: bridge
