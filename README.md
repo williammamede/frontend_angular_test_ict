@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/14292738/68221028-88310700-ffc7-11e9-9f22-a8e223b8c3c1.png)
+
 **Simple angular example to perform http requests**
 ___
 
@@ -14,3 +16,6 @@ There are 3 possible ways to run the php BE:
 * Generate a docker image using the httpd\.docker\backend.dockerfile. 
 
 * Download the docker image from Docker HUB performing a pull request from the repository [willmamede/php_test_ict](https://cloud.docker.com/repository/docker/willmamede/php_test_ict)
+
+> It s possible to run it using docker compose, present in the main folder
+
